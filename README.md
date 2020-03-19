@@ -11,4 +11,5 @@ ramgatness action time file_location
 Пример
 
 ramgatness payload 4 ../file
+
 ramgatness gamma 3 ../../home/file
