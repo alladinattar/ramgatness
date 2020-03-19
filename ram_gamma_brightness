@@ -1,5 +1,5 @@
 #/bin/bash
-foo=$(xxd -b file | cut -d" " -f 2-7 | tr "\n" " "  | sed s/' '//g)
+foo=$(xxd -b $1 | cut -d" " -f 2-7 | tr "\n" " "  | sed s/' '//g)
 
 
 if [[ $2 = "gamma" ]]
