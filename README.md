@@ -9,7 +9,8 @@ ramgatness - скрипт, который может менять яркость
 ./ramgatness.sh file_location action time 
 
 # Пример
-
+```
 ./ramgatness.sh ../file payload 4 
 
 ./ramgatness.sh ../../home/file gamma 3 
+```
