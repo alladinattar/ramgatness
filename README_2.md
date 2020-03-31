@@ -7,8 +7,9 @@ ramgatness_2 - скрипт, который может менять яркост
 `./ramgatness_2.sh file_location action time size_byte`
 
 # Пример
-`./ramgatness_2.sh ../file payload 4 50000000
-./ramgatness.sh ../../home/file gamma 3`
+`./ramgatness_2.sh ../file payload 4 50000000`
+
+`./ramgatness.sh ../../home/file gamma 3`
 
 
 
