@@ -4,12 +4,11 @@ ramgatness_2 - скрипт, который может менять яркост
 # Командная строка
 После названия обязательно прописываются четыре команды: что будет делать скрипт (payload,gamma,brightness), положение файла, сколько будет длиться обработка нулей(в секундах) и на сколько байтов нагружать оперативную память.
 
-![alt text](Screenshot_1.png "Описание будет тут")
-
-./ramgatness_2.sh file_location action time size_byte
+`./ramgatness_2.sh file_location action time size_byte`
 
 # Пример
-./ramgatness_2.sh ../file payload 4 50000000
-./ramgatness.sh ../../home/file gamma 3
+`./ramgatness_2.sh ../file payload 4 50000000
+./ramgatness.sh ../../home/file gamma 3`
+
 
 
