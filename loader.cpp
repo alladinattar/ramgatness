@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
     int i = 0;
     while(i<n){
         malloc(1);
-        i+=1;
+        i++;
     }
     return 0;
 }
