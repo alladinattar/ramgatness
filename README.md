@@ -6,7 +6,7 @@ ramgatness - скрипт, который может менять яркость
 
 После названия обязательно прописываются три команды: что будет делать скрипт (payload,gamma,brightness), положение файла, сколько будет длиться обработка каждого символа(в секундах)
 
-./ramgatness.sh file_location action time 
+`./ramgatness.sh file_location action time `
 
 # Пример
 
