@@ -25,8 +25,9 @@ then
                 echo "${foo:$i:1}";
                 if [[ "${foo:$i:1}" = 1 ]]; then
 
-                        stress-ng --class memory --memfd 1 --memfd-byte 100% --timeout ${3}s
+                        ./loader $4
                 else
+                        sleep $3
                         continue
                 fi
         done
