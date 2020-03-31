@@ -1,15 +1,14 @@
-# linux
-Имя
+# Имя
 
 ramgatness - скрипт, который может менять яркость или гамму изображения на экране, или нагружать оперативную память в течение некоторого времени
 
-Командная строка
+# Командная строка
 
 После названия обязательно прописываются три команды: что будет делать скрипт(payload,gamma,brightness), сколько будет длиться итерация каждого символа(в секундах), положение файла
 ramgatness action time file_location
 
-Пример
+# Пример
 
-ramgatness payload 4 ../file
+./ramgatness.sh ../file payload 4 
 
-ramgatness gamma 3 ../../home/file
+./ramgatness.sh ../../home/file gamma 3 
