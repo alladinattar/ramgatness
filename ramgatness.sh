@@ -25,10 +25,9 @@ then
                 echo "${foo:$i:1}";
                 if [[ "${foo:$i:1}" = 1 ]]; then
 
-                        ./loader $4
+                        ./loader $3 1
                 else
-                        sleep $3
-                        continue
+                       ./loader $3 0
                 fi
         done
 elif [[ $2 = "brightness" ]]
