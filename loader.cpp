@@ -6,8 +6,8 @@
 #include <unistd.h>
 using namespace std;
 
-void Stack(int n, int number) {
-    try{
+void Stack(int n, int number, int time) {
+    //try{
     int i = 0;
     stack <unsigned long int> steck;
     if (number == 1) {
@@ -24,11 +24,11 @@ void Stack(int n, int number) {
     }
      printf("stack complete\n");
     }
-    sleep(2);
-    } catch(void *) {}
+    sleep(time);
+    //} catch(void *) {}
 }
 
-void Heap(int n, int number) {
+void Heap(int n, int number, int time) {
     try{
     int i = 0;    
     if (number == 1) {
@@ -51,7 +51,7 @@ void Heap(int n, int number) {
         exit(1);
     }
     }
-    sleep(2);
+    sleep(time);
     
     } catch(void *) {}
 }
@@ -60,27 +60,28 @@ int main(int argc, char *argv[])
 {
     int n = stoi(argv[1]);  
     int number = stoi(argv[2]);
+    int timeToSleep = stoi(argv[3]);
 
-    thread th1(Heap, n/10, number);
-    thread th2(Heap, n/10, number);
-    thread th3(Heap, n/10, number);
-    thread th4(Heap, n/10, number);
-    thread th5(Heap, n/10, number);
-    thread th6(Heap, n/10, number);
-    thread th7(Heap, n/10, number);
-    thread th8(Heap, n/10, number);
-    thread th9(Heap, n/10, number);
-    thread th10(Heap, n/10, number);
-    thread th20(Heap, n/10, number);
-    thread th21(Heap, n/10, number);
-    thread th22(Heap, n/10, number);
-    thread th23(Heap, n/10, number);
-    thread th24(Heap, n/10, number);
-    thread th25(Heap, n/10, number);
-    thread th26(Heap, n/10, number);
-    thread th27(Heap, n/10, number);
-    thread th28(Heap, n/10, number);
-    thread th29(Heap, n/10, number);
+    thread th1(Stack, n/10, number, timeToSleep);
+    thread th2(Stack, n/10, number, timeToSleep);
+    thread th3(Stack, n/10, number, timeToSleep);
+    thread th4(Stack, n/10, number, timeToSleep);
+    thread th5(Stack, n/10, number, timeToSleep);
+    thread th6(Stack, n/10, number, timeToSleep);
+    thread th7(Stack, n/10, number, timeToSleep);
+    thread th8(Heap, n/10, number, timeToSleep);
+    thread th9(Heap, n/10, number, timeToSleep);
+    thread th10(Heap, n/10, number, timeToSleep);
+    thread th20(Heap, n/10, number, timeToSleep);
+    thread th21(Heap, n/10, number, timeToSleep);
+    thread th22(Heap, n/10, number, timeToSleep);
+    thread th23(Heap, n/10, number, timeToSleep);
+    thread th24(Heap, n/10, number, timeToSleep);
+    thread th25(Heap, n/10, number, timeToSleep);
+    thread th26(Heap, n/10, number, timeToSleep);
+    thread th27(Heap, n/10, number, timeToSleep);
+    thread th28(Heap, n/10, number, timeToSleep);
+    thread th29(Heap, n/10, number, timeToSleep);
     th1.join(); 
     th2.join(); 
     th3.join(); 
