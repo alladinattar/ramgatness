@@ -13,6 +13,6 @@ ramgatness - скрипт, который может менять яркость
 
 
 # Компиляция
-`sudo g++ -o loader loader.cpp`
+`sudo g++ -pthread -o loader loader.cpp
 
 

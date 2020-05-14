@@ -23,12 +23,16 @@ elif [[ $2 = "payload" ]]
 then
         for (( i=0; i<${#foo}; i++ )); do
                 echo "${foo:$i:1}";
-                if [[ "${foo:$i:1}" = 1 ]]; then
 
-                        ./loader $3 1
-                else
-                       ./loader $3 0
-                fi
+				
+                	if [[ "${foo:$i:1}" = 1 ]]; then
+
+                        	./loader $3 1
+                	else
+                       		./loader $3 0
+                	fi
+		
+        
         done
 elif [[ $2 = "brightness" ]]
 then
