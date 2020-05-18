@@ -7,12 +7,18 @@ ramgatness - скрипт, который может менять яркость
 `./ramgatness.sh file_location action time|size_byte`
 
 # Пример
-`./ramgatness.sh ./example.txt payload 50000000`
+
+Первый аргумент - путь до файла
+Второй - payload
+Третий - количество байт/8 (запускается 20 процессов (6 процессов выделают память в стеке, 14 - в куче) с выделением памяти с размером блока в 4 байта)
+Четвертый - количество секунд задержки
+
+`bash ./ramgatness.sh ./example.txt payload 99485760 4`
 
 `./ramgatness.sh  ./example.txt gamma 3`
 
 
 # Компиляция
-`sudo g++ -o loader loader.cpp`
+`sudo g++ -pthread -o loader loader.cpp
 
 
