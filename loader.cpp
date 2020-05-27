@@ -3,20 +3,21 @@
 #include <iostream>
 #include <stack> 
 #include <thread> 
+#include <vector>
 #include <unistd.h>
 using namespace std;
 
 void Stack(int n, int number, int time) {
     //try{
-    int i = 0;
-    stack <unsigned long int> steck;
-    if (number == 1) {
-    while(i<n){
+    int i = 0;//unsigned long int занимает 4 байта
+    stack <unsigned long int> steck;//создаем стек из чисел
+    if (number == 1) {//если в аргументе функции number = 1
+    while(i<n){//пока i<n заполняем стек  по 4 байта
         steck.push(4294967295);
         i++;
     }
     printf("stack complete\n");
-    } else {
+    } else {// если нет то заполняем стек нулями
         
        while(i<n){
         steck.push(0);
@@ -31,14 +32,14 @@ void Stack(int n, int number, int time) {
 void Heap(int n, int number, int time) {
     try{
     int i = 0;    
-    if (number == 1) {
+    if (number == 1) {// выделяем память под динамический массив целых чисел размером n
     unsigned long int *pointer = (unsigned long int*) calloc(n,sizeof(unsigned long int));
     if (pointer==NULL) {
         printf("Error: can't allocate memory");
         exit(1);
     }
-    while(i<n){
-        pointer[i] = 4294967295;
+    while(i<n){// заполняем массив
+        pointer[i] = 3;
         i++;
     }
      printf("heap complete\n");
@@ -61,47 +62,22 @@ int main(int argc, char *argv[])
     int n = stoi(argv[1]);  
     int number = stoi(argv[2]);
     int timeToSleep = stoi(argv[3]);
+    int thrcount_heap = stoi(argv[4]);
+    int thrcount_stack = stoi(argv[5]);
 
-    thread th1(Stack, n/10, number, timeToSleep);
-    thread th2(Stack, n/10, number, timeToSleep);
-    thread th3(Stack, n/10, number, timeToSleep);
-    thread th4(Stack, n/10, number, timeToSleep);
-    thread th5(Stack, n/10, number, timeToSleep);
-    thread th6(Stack, n/10, number, timeToSleep);
-    thread th7(Stack, n/10, number, timeToSleep);
-    thread th8(Heap, n/10, number, timeToSleep);
-    thread th9(Heap, n/10, number, timeToSleep);
-    thread th10(Heap, n/10, number, timeToSleep);
-    thread th20(Heap, n/10, number, timeToSleep);
-    thread th21(Heap, n/10, number, timeToSleep);
-    thread th22(Heap, n/10, number, timeToSleep);
-    thread th23(Heap, n/10, number, timeToSleep);
-    thread th24(Heap, n/10, number, timeToSleep);
-    thread th25(Heap, n/10, number, timeToSleep);
-    thread th26(Heap, n/10, number, timeToSleep);
-    thread th27(Heap, n/10, number, timeToSleep);
-    thread th28(Heap, n/10, number, timeToSleep);
-    thread th29(Heap, n/10, number, timeToSleep);
-    th1.join(); 
-    th2.join(); 
-    th3.join(); 
-    th4.join(); 
-    th5.join(); 
-    th6.join(); 
-    th7.join(); 
-    th8.join(); 
-    th9.join(); 
-    th10.join(); 
-    th20.join(); 
-    th21.join(); 
-    th22.join(); 
-    th23.join(); 
-    th24.join(); 
-    th25.join(); 
-    th26.join(); 
-    th27.join(); 
-    th28.join(); 
-    th29.join(); 
+    vector <thread> ths_heap;
+    vector <thread> ths_stack;
+
+    for (int i = 0; i < thrcount_heap; ++i)
+        ths_heap.push_back(thread (Heap, n, number, timeToSleep));
+    for (auto & th : ths_heap)
+        th.join();
+
+    for (int i = 0; i < thrcount_stack; ++i)
+        ths_stack.push_back(thread (Stack, n, number, timeToSleep));
+    for (auto & th : ths_stack)
+        th.join();
+    
 
     return 0;
 }
