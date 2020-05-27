@@ -27,9 +27,9 @@ then
 				
                 	if [[ "${foo:$i:1}" = 1 ]]; then
 
-                        	./loader $3 1 $4
+                        	./loader $3 1 $4 $5 $6
                 	else
-                       		./loader $3 0 $4
+                       		./loader $3 0 $4 $5 $6
                 	fi
 		
         
